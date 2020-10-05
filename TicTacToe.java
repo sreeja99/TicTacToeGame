@@ -127,6 +127,33 @@ public class TicTacToe {
 			else if(board[8]==board[7]&&board[7]==computer||board[3]==board[6]&&board[6]==computer||board[1]==board[5]&&board[5]==computer||board[9] == ' ') {
 				location =9;
 			}
+			else if(board[5]==board[7]&&board[7]==user||board[2]==board[3]&&board[2]==user||board[5]==board[9]&&board[9]==user||board[1] == ' ') {
+				location=1;
+				}
+			else if(board[1]==board[3]&&board[1]==user||board[5]==board[8]&&board[8]==user||board[2] == ' '){
+				location=2;
+			}
+			else if(board[1]==board[2]&&board[1]==user||board[6]==board[9]&&board[9]==user||board[5]==board[7]&&board[7]==user||board[3] == ' ') {
+				location=3;
+			}
+			else if(board[5]==board[6]&&board[6]==user||board[7]==board[1]&&board[7]==user||board[4] == ' ') {
+				location =4;
+			}
+			else if(board[4]==board[6]&&board[6]==user||board[2]==board[8]&&board[8]==user||board[5] == ' '){
+				location=5;
+			}
+			else if(board[4]==board[5]&&board[5]==user||board[3]==board[9]&&board[9]==user||board[6] == ' '){
+				location =6;
+			}
+			else if(board[1]==board[4]&&board[1]==user||board[8]==board[9]&&board[9]==user||board[5]==board[3]&&board[3]==user||board[7] == ' ') {
+				location=7;
+			}
+			else if(board[2]==board[5]&&board[2]==user||board[9]==board[7]&&board[9]==user||board[8] == ' ') {
+				location=8;
+			}
+			else if(board[8]==board[7]&&board[7]==user||board[3]==board[6]&&board[6]==user||board[1]==board[5]&&board[5]==user||board[9] == ' ') {
+				location =9;
+			}
 			
 		}
 		return location;
