@@ -10,7 +10,7 @@ public class TicTacToe {
 	public static char user;
 	public static char computer;
 	public static char turn;
-	public static char board;
+	static char[] board = new char[10];
 	// Create board with Empty Spaces
 	private char[] createBoard() {
 		char[] board = new char[10];
@@ -187,6 +187,31 @@ public class TicTacToe {
 		}
 		return location;
 	}
+	//asking the user if they are interested in another game
+	private static void anotherGame() {
+		boolean ans;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Do You Want to Play An Another Game");
+		if(sc.next()=="y"||sc.next()=="Y") {
+		    displayBoard(board);
+			char user=chooseLetter();
+			//assigning computer letter
+			if(user=='X') {
+				computer='O';
+			}
+			else {
+				computer='X';
+			}
+			displayBoard(board);
+			int toss=toss();
+			isWinner(board,toss());
+		}
+		else {
+			System.out.println("Thank You for playing the game");
+			System.exit(0);
+		}
+	    
+	}
 	 public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe program");
         TicTacToe ticTacToe = new TicTacToe();
@@ -200,8 +225,10 @@ public class TicTacToe {
 			computer='X';
 		}
 		displayBoard(board);
-		makeMove(board,user);
+		int toss=ticTacToe.toss();
 		isWinner(board,toss());
+		anotherGame();
 	}
+	 
 
 }
