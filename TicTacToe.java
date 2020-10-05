@@ -19,6 +19,14 @@ public class TicTacToe {
 		System.out.println("Enter the Letter");
 		return sc.next().charAt(0);
 	}
+	//displaying board
+	private static void displayBoard(char[] board) {
+		System.out.println(board[1]+" | "+board[2]+" | "+board[3]);
+		System.out.println("______________");
+		System.out.println(board[4]+" | "+board[5]+" | "+board[6]);
+		System.out.println("______________");
+		System.out.println(board[7]+" | "+board[8]+" | "+board[9]);
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe program");
         TicTacToe ticTacToe = new TicTacToe();
@@ -31,6 +39,7 @@ public class TicTacToe {
 		else {
 			computer='X';
 		}
+		displayBoard(board);
 	}
 
 }
