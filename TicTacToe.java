@@ -31,7 +31,7 @@ public class TicTacToe {
 		System.out.println(board[7]+" | "+board[8]+" | "+board[9]);
 	}
 	// Move to desired location
-		private static int moveLocation(char[] board,char user) {
+		private static int moveLocation(char[] board) {
 			Scanner sc = new Scanner(System.in);
 			Integer[] values = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 			while (true) {
@@ -43,9 +43,23 @@ public class TicTacToe {
 			}
 
 		}
-
+        //checking if the location is free
 		private static boolean isSpaceFree(char[] board, int location) {
 			return board[location] == ' ';
+		}
+		//changing on board
+		private static void makeMove(char[] board,char turn) {
+			if(turn==user) {
+				int location=moveLocation(board);
+				board[location]=user;
+			}
+			else {
+				int location=(int) (Math.floor((Math.random() * 10) % 9) + 1);
+				if(isSpaceFree(board,location)==true) {
+					board[location]=turn;
+				}
+			}
+			displayBoard(board);
 		}
 	public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe program");
@@ -60,7 +74,7 @@ public class TicTacToe {
 			computer='X';
 		}
 		displayBoard(board);
-		moveLocation(board,user);
+		makeMove(board,user);
 	}
 
 }
