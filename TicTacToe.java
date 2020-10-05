@@ -80,6 +80,17 @@ public class TicTacToe {
 			makeMove(board,computer);
 		}
 	}
+	private static boolean isWinner(char[] board,int toss) {
+		return(board[1]==board[2]&&board[2]==board[3]||
+		   board[4]==board[5]&&board[5]==board[6]||
+		   board[7]==board[8]&&board[8]==board[9]||
+		   board[1]==board[4]&&board[4]==board[7]||
+		   board[2]==board[5]&&board[5]==board[8]||
+		   board[3]==board[6]&&board[6]==board[9]||
+		   board[1]==board[5]&&board[5]==board[9]||
+		   board[3]==board[5]&&board[5]==board[7]); 
+				
+	}
 	 public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe program");
         TicTacToe ticTacToe = new TicTacToe();
@@ -94,6 +105,7 @@ public class TicTacToe {
 		}
 		displayBoard(board);
 		makeMove(board,user);
+		isWinner(board,toss());
 	}
 
 }
