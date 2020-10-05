@@ -154,6 +154,19 @@ public class TicTacToe {
 			else if(board[8]==board[7]&&board[7]==user||board[3]==board[6]&&board[6]==user||board[1]==board[5]&&board[5]==user||board[9] == ' ') {
 				location =9;
 			}
+			//Occupy corners
+			else if(board[1]==' ') {                  
+				location=1;
+			}
+			else if(board[3]==' ') {
+				location=3;
+			}
+			else if(board[7]==' ') {
+				location=7;
+			}
+			else if(board[9]==' ') {
+				location=9;
+			}
 			
 		}
 		return location;
